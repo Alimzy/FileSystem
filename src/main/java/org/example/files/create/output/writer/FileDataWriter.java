@@ -1,5 +1,6 @@
 package org.example.files.create.output.writer;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -52,7 +53,13 @@ public class FileDataWriter {
         String myText = FileDataWriter.readData(path);
         return myText.length();
     }
+    public static void writeDataToFile(String text,String fileLocation) {
+    try (FileOutputStream outputStream = new FileOutputStream(fileLocation)){
+
+    }catch (IOException e){
+        e.printStackTrace();
+
+    }
 
 }
-
-
+}
